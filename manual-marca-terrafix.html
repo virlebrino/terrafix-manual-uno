@@ -1,0 +1,1516 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Manual de Marca — TERRAFIX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Gothic&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --naranja:#e59731;
+    --negro:#000000;
+    --oliva:#68724d;
+    --crema:#f2e7db;
+    --gris:#aca9a9;
+    --blanco:#ffffff;
+    --nav-w:220px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;padding:0;
+    font-family:'Montserrat',system-ui,sans-serif;
+    color:var(--negro);
+    background:var(--blanco);
+    line-height:1.6;font-size:15px;
+    overflow-x:hidden;
+  }
+  img{max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  /* ======= NAV ======= */
+  nav.side{
+    position:fixed;top:0;left:0;height:100vh;width:var(--nav-w);
+    background:var(--negro);color:#fff;
+    padding:26px 20px;display:flex;flex-direction:column;gap:22px;
+    z-index:50;
+  }
+  nav.side .brand{
+    font-family:'League Gothic',sans-serif;font-weight:400;
+    font-size:30px;color:var(--naranja);text-align:center;letter-spacing:.08em;line-height:1;
+  }
+  nav.side .brand small{
+    display:block;font-family:'Montserrat';font-weight:500;font-size:9px;
+    letter-spacing:.3em;color:#a39a89;margin-top:6px;text-transform:uppercase;
+  }
+  nav.side .links{display:flex;flex-direction:column;gap:2px;flex:1;overflow:auto}
+  nav.side a{
+    display:flex;gap:10px;padding:10px 12px;border-radius:2px;
+    font-family:'Montserrat';font-weight:600;font-size:10.5px;
+    letter-spacing:.16em;text-transform:uppercase;color:#908978;
+    border-left:2px solid transparent;
+  }
+  nav.side a:hover{background:#161616;color:#fff}
+  nav.side a.active{background:#161616;color:#fff;border-left-color:var(--naranja)}
+  nav.side a .num{color:var(--naranja);font-weight:700;font-size:9px;min-width:20px}
+  nav.side .pdf{
+    background:var(--naranja);color:var(--negro);border:0;padding:11px;
+    font-family:'League Gothic',sans-serif;font-size:15px;letter-spacing:.16em;
+    cursor:pointer;text-transform:uppercase;width:100%;
+  }
+  nav.side .pdf:hover{background:#d28828}
+  nav.side .foot{
+    font-family:'Montserrat';font-weight:500;font-size:9px;letter-spacing:.24em;
+    color:#6a6355;border-top:1px solid #1a1a1a;padding-top:12px;
+    line-height:1.8;text-transform:uppercase;
+  }
+
+  /* ======= MAIN ======= */
+  main{margin-left:var(--nav-w)}
+  .slide{
+    position:relative;
+    width:100%;min-height:100vh;
+    display:flex;align-items:center;justify-content:center;
+    background:#fff;
+    padding:0;
+  }
+  .slide img{
+    width:100%;max-width:1600px;height:auto;display:block;
+  }
+  .slide.cover{background:#fff}
+
+  /* Page separator */
+  .slide::after{
+    content:"";
+    position:absolute;bottom:0;left:10%;right:10%;height:1px;
+    background:linear-gradient(90deg, transparent, #e0e0e0 20%, #e0e0e0 80%, transparent);
+  }
+  .slide:last-child::after{display:none}
+
+  /* Section markers on the side */
+  .slide .marker{
+    position:absolute;top:40px;left:40px;
+    font-family:'Montserrat';font-weight:700;font-size:10px;
+    letter-spacing:.3em;text-transform:uppercase;color:var(--gris);
+    z-index:2;
+  }
+
+  /* Extras section */
+  .extras{
+    background:var(--crema);padding:100px 8vw;
+    display:flex;flex-direction:column;gap:70px;
+  }
+  @media(max-width:700px){.extras{padding:60px 5vw;gap:50px}}
+  @media(max-width:480px){.extras{padding:40px 16px;gap:38px}}
+  @media(max-width:700px){
+    .voz-compare{padding:22px !important}
+    .voz-compare-grid{grid-template-columns:1fr !important;gap:28px !important}
+  }
+  .extras h2{
+    font-family:'League Gothic',sans-serif;font-weight:400;
+    font-size:clamp(42px,5vw,72px);color:var(--naranja);
+    letter-spacing:.02em;line-height:1;margin:0 0 24px;
+  }
+  .extras .lead{
+    font-family:'Bebas Neue',sans-serif;font-size:18px;
+    letter-spacing:.06em;line-height:1.6;color:var(--negro);max-width:820px;
+  }
+  .section-title{
+    display:flex;align-items:baseline;gap:14px;margin-bottom:24px;
+  }
+  .section-title .num{
+    font-family:'League Gothic',sans-serif;font-size:28px;
+    color:var(--naranja);letter-spacing:.02em;
+  }
+
+  /* UI Applications */
+  .ui-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  @media(max-width:1100px){.ui-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:700px){.ui-grid{grid-template-columns:1fr;gap:16px}}
+
+  .ui-card{
+    background:#fff;border:1px solid #e8e1d4;padding:26px;border-radius:4px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .ui-card .lbl{
+    font-family:'Montserrat';font-weight:700;font-size:10px;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--gris);
+  }
+
+  /* Button styles */
+  .btn-terra{
+    display:inline-block;background:var(--naranja);color:var(--negro);
+    font-family:'League Gothic',sans-serif;font-size:18px;
+    letter-spacing:.2em;padding:14px 28px;text-transform:uppercase;
+    border:0;cursor:pointer;transition:background .2s;
+  }
+  .btn-terra:hover{background:#d28828}
+  .btn-dark{
+    display:inline-block;background:var(--negro);color:#fff;
+    font-family:'League Gothic',sans-serif;font-size:18px;
+    letter-spacing:.2em;padding:14px 28px;text-transform:uppercase;
+    border:0;cursor:pointer;
+  }
+  .btn-outline{
+    display:inline-block;background:transparent;color:var(--negro);
+    font-family:'League Gothic',sans-serif;font-size:18px;
+    letter-spacing:.2em;padding:13px 27px;text-transform:uppercase;
+    border:1px solid var(--negro);cursor:pointer;
+  }
+
+  /* Product card */
+  .prod-card{
+    background:#fff;border:1px solid #e8e1d4;overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  .prod-card .img{
+    aspect-ratio:4/3;
+    background:linear-gradient(180deg, rgba(0,0,0,.1) 0 2px, transparent 2px 100%) 0 0/100% 20%,
+      repeating-linear-gradient(90deg,#c78551 0 24px,#a5693a 24px 48px);
+  }
+  .prod-card .info{padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+  .prod-card .cat{font-family:'Montserrat';font-weight:600;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--naranja)}
+  .prod-card .tit{font-family:'League Gothic';font-size:26px;line-height:1;color:var(--negro);letter-spacing:.02em}
+  .prod-card .desc{font-family:'Bebas Neue';font-size:13px;letter-spacing:.06em;color:var(--gris);line-height:1.5}
+  .prod-card .foot{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-top:1px solid #eee;background:var(--crema)}
+  .prod-card .price{font-family:'League Gothic';font-size:22px;color:var(--negro);letter-spacing:.04em}
+
+  /* Instagram mockup */
+  .ig-post{
+    background:#fff;border:1px solid #e8e1d4;
+    display:flex;flex-direction:column;
+  }
+  .ig-post .hdr{padding:12px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #eee}
+  .ig-post .av{width:32px;height:32px;border-radius:50%;background:var(--naranja);display:flex;align-items:center;justify-content:center;color:var(--negro);font-family:'League Gothic';font-size:14px;letter-spacing:.02em}
+  .ig-post .user{font-family:'Montserrat';font-weight:700;font-size:13px}
+  .ig-post .sub{font-family:'Montserrat';font-weight:400;font-size:11px;color:var(--gris)}
+  .ig-post .body{
+    aspect-ratio:1;background:var(--crema);
+    display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+    padding:20px;
+  }
+  .ig-post .body::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse at 30% 30%, rgba(229,151,49,.15), transparent 60%);
+  }
+  .ig-post .body h3{
+    font-family:'League Gothic';font-size:42px;line-height:.95;color:var(--negro);
+    text-align:center;margin:0;letter-spacing:.02em;z-index:1;
+  }
+  .ig-post .body h3 em{color:var(--naranja);font-style:normal;display:block}
+  .ig-post .actions{padding:12px 14px;font-family:'Montserrat';font-size:13px}
+  .ig-post .cap{padding:0 14px 14px;font-family:'Montserrat';font-size:12px;color:var(--gris);line-height:1.5}
+
+  /* Mockups realistas grid */
+  .mockups-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px;
+  }
+  @media(max-width:1100px){.mockups-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:700px){.mockups-grid{grid-template-columns:1fr}}
+  .mk-item{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.08)}
+  .mk-item img{display:block;width:100%;height:auto}
+
+  /* Print */
+  @media print{
+    nav.side{display:none}
+    .nav-toggle,.nav-backdrop{display:none}
+    main{margin-left:0}
+    .slide{page-break-after:always;min-height:auto}
+    .extras{page-break-before:always}
+  }
+
+  /* Hamburger + mobile nav */
+  .nav-toggle{
+    display:none;position:fixed;top:14px;right:14px;z-index:60;
+    width:44px;height:44px;border-radius:50%;border:0;
+    background:var(--naranja);color:var(--negro);cursor:pointer;
+    box-shadow:0 8px 22px rgba(0,0,0,.22);
+    align-items:center;justify-content:center;padding:0;
+  }
+  .nav-toggle span{
+    position:relative;display:block;width:20px;height:2px;background:var(--negro);
+    transition:transform .3s ease, opacity .3s ease;
+  }
+  .nav-toggle span::before,
+  .nav-toggle span::after{
+    content:"";position:absolute;left:0;width:20px;height:2px;background:var(--negro);
+    transition:transform .3s ease, top .3s ease;
+  }
+  .nav-toggle span::before{top:-6px}
+  .nav-toggle span::after{top:6px}
+  body.nav-open .nav-toggle span{background:transparent}
+  body.nav-open .nav-toggle span::before{top:0;transform:rotate(45deg)}
+  body.nav-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
+
+  .nav-backdrop{
+    display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:45;
+    opacity:0;transition:opacity .3s ease;
+  }
+  body.nav-open .nav-backdrop{opacity:1}
+
+  @media(max-width:860px){
+    :root{--nav-w:0}
+    main{margin-left:0}
+    nav.side{
+      transform:translateX(-100%);
+      transition:transform .35s cubic-bezier(.22,.61,.36,1);
+      width:min(280px,80vw);
+      box-shadow:6px 0 24px rgba(0,0,0,.3);
+    }
+    body.nav-open nav.side{transform:translateX(0)}
+    body.nav-open .nav-backdrop{display:block}
+    .nav-toggle{display:inline-flex}
+    .slide{padding:20px}
+    .slide .marker{top:20px;left:20px;font-size:9px}
+  }
+  @media(max-width:480px){
+    .slide{padding:14px}
+  }
+</style>
+</head>
+<body>
+
+<button class="nav-toggle" aria-label="Abrir menú" aria-controls="side-nav" aria-expanded="false">
+  <span></span>
+</button>
+<div class="nav-backdrop" aria-hidden="true"></div>
+
+<nav class="side" id="side-nav">
+  <div class="brand">TERRAFIX<small>Brand Board 2026</small></div>
+  <div class="links">
+    <a href="#s1"><span class="num">01</span>Portada</a>
+    <a href="#s2"><span class="num">02</span>Logotipo</a>
+    <a href="#s3"><span class="num">03</span>Historia</a>
+    <a href="#s4"><span class="num">04</span>Paleta</a>
+    <a href="#s5"><span class="num">05</span>Tipografía</a>
+    <a href="#s6"><span class="num">06</span>Mockups</a>
+    <a href="#voz"><span class="num">07</span>Tono de Voz</a>
+  </div>
+  <button class="pdf" onclick="window.print()">Guardar PDF</button>
+  <div class="foot">Edición 01<br/>2026<br/>TERRAFIX S.A.</div>
+</nav>
+
+<main>
+
+<!-- ===== MESAS DE TRABAJO ORIGINALES ===== -->
+<section class="slide cover" id="s1">
+  <img src="1.png" alt="TERRAFIX — Portada 2026"/>
+</section>
+
+<section class="slide s2-slide" id="s2">
+  <div class="s2-page">
+
+    <!-- Header -->
+    <header class="s2-head">
+      <h2 class="s2-title"><span class="s2-num">01.</span>IDENTIDAD VISUAL — LOGOTIPO</h2>
+      <span class="s2-rule"></span>
+    </header>
+
+    <!-- Hero: logo principal protagónico -->
+    <div class="s2-hero">
+      <div class="logo-stage logo-main" aria-label="Logo principal">
+        <span class="stage-badge primary">01 · PRINCIPAL (COLOR)</span>
+        <div class="crop crop-main">
+          <img src="Mesa de trabajo 6@4x-8.png" alt="Logo principal TERRAFIX"/>
+        </div>
+        <span class="stage-caption">EL LOGO OFICIAL — USO PRIORITARIO</span>
+      </div>
+
+      <aside class="s2-desc">
+        <p>El logo TERRAFIX se compone de un rectangulo terraco con poca opasidad, en us interior, una panel terracora contiene el wordmarl: TERRA en negro y FIX en blanco con una tipografía sans-serif.</p>
+      </aside>
+    </div>
+
+    <!-- Atributos -->
+    <div class="s2-attrs">
+      <article class="attr">
+        <span class="attr-icon"></span>
+        <p>La combinacion negro/blanco/terracota comunica profeisonalismo, calidez y claridad</p>
+      </article>
+      <article class="attr">
+        <span class="attr-icon"></span>
+        <p>El lema refuerza el compromiso con la variedad y la satisfacción del cliente</p>
+      </article>
+      <article class="attr">
+        <span class="attr-icon"></span>
+        <p>El rectangulo y la geometria plena trasmiten estabilidad y precisión constructiva</p>
+      </article>
+    </div>
+
+    <!-- Variables (secundarias) -->
+    <div class="s2-vars">
+      <div class="s2-vars-head">
+        <span class="vars-dot"></span>
+        <h3>VARIABLES DE LOGO</h3>
+        <span class="vars-line"></span>
+        <span class="vars-meta">02 VARIANTES SECUNDARIAS</span>
+      </div>
+      <div class="s2-vars-row">
+        <div class="logo-stage logo-alt" aria-label="Variante White & Black">
+          <span class="stage-badge alt">02 · WHITE &amp; BLACK</span>
+          <div class="crop crop-v-wb">
+            <img src="Mesa de trabajo 7@4x-8.png" alt="Variante White &amp; Black"/>
+          </div>
+        </div>
+        <div class="logo-stage logo-alt" aria-label="Variante Full Black">
+          <span class="stage-badge alt">03 · FULL BLACK</span>
+          <div class="crop crop-v-fb">
+            <img src="Mesa de trabajo 8@4x-8.png" alt="Variante Full Black"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .slide.s2-slide{
+    background:#fff;padding:60px 6vw;min-height:100vh;display:block;
+  }
+  @media(max-width:700px){.slide.s2-slide{padding:40px 5vw}}
+  @media(max-width:480px){.slide.s2-slide{padding:30px 16px}}
+  .slide.s2-slide::after{display:none}
+  .s2-page{
+    position:relative;max-width:1480px;margin:0 auto;
+    display:flex;flex-direction:column;gap:44px;
+  }
+
+  /* Header */
+  .s2-head{display:flex;flex-direction:column;gap:14px}
+  .s2-title{
+    margin:0;font-family:'League Gothic',sans-serif;font-weight:400;
+    font-size:clamp(40px,4.2vw,58px);line-height:1;color:var(--naranja);
+    letter-spacing:.04em;text-transform:uppercase;
+  }
+  .s2-num{color:var(--negro);margin-right:10px}
+  .s2-rule{display:block;width:72px;height:3px;background:var(--naranja)}
+
+  /* Hero */
+  .s2-hero{
+    display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center;
+  }
+  @media(max-width:960px){.s2-hero{grid-template-columns:1fr;gap:30px}}
+
+  /* Logo stages */
+  .logo-stage{position:relative;display:inline-block;transition:transform .45s cubic-bezier(.22,.61,.36,1)}
+  .logo-stage:hover{transform:translateY(-6px)}
+  .stage-badge{
+    position:absolute;top:-16px;left:20px;z-index:3;
+    background:var(--naranja);color:var(--negro);
+    font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;
+    letter-spacing:.28em;text-transform:uppercase;padding:7px 14px;
+    box-shadow:0 8px 18px rgba(229,151,49,.35);
+  }
+  .stage-badge.primary{font-size:11px;padding:8px 18px}
+  .stage-badge.alt{background:var(--negro);color:var(--naranja);box-shadow:0 6px 14px rgba(0,0,0,.22);font-size:9px;padding:6px 12px}
+  .stage-caption{
+    display:block;margin-top:12px;
+    font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;
+    letter-spacing:.28em;text-transform:uppercase;color:var(--gris);
+    padding-left:14px;border-left:2px solid var(--naranja);
+  }
+
+  /* Contenedor del logo: imagen centrada con object-fit:contain
+     para que entre completa sin modificar su morfología */
+  .crop{
+    position:relative;background:#fafaf7;
+    border:1px solid #ede8dc;
+    box-shadow:0 22px 48px rgba(0,0,0,.10);
+    transition:box-shadow .4s ease, border-color .4s ease, transform .6s ease;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .crop img{
+    display:block;width:100%;height:100%;
+    object-fit:contain;object-position:center;
+  }
+  .logo-stage:hover .crop{
+    box-shadow:0 32px 70px rgba(229,151,49,.24);
+    border-color:var(--naranja);
+    transform:scale(1.02);
+  }
+
+  /* Principal: protagónico */
+  .crop-main{
+    width:720px;height:300px;max-width:100%;padding:18px 24px;
+  }
+  .crop-main img{transform:scale(1.15)}
+  /* Variantes secundarias */
+  .crop-v-wb,
+  .crop-v-fb{
+    width:360px;height:150px;padding:10px 14px;
+  }
+  .crop-v-wb img,
+  .crop-v-fb img{transform:scale(1.15)}
+  @media(max-width:700px){
+    .crop-main{width:100%;height:220px;padding:12px 16px}
+    .crop-v-wb,.crop-v-fb{width:100%;height:130px}
+  }
+  @media(max-width:480px){
+    .crop-main{height:170px;padding:10px 12px}
+    .crop-v-wb,.crop-v-fb{height:110px;padding:8px 10px}
+    .stage-badge.primary{font-size:10px;padding:6px 12px;left:12px}
+    .stage-badge.alt{font-size:8px;padding:5px 10px;left:12px}
+  }
+
+  /* Descripción */
+  .s2-desc p{
+    margin:0;font-family:'Bebas Neue',sans-serif;font-size:18px;
+    letter-spacing:.04em;line-height:1.65;color:var(--negro);
+    padding:4px 0 4px 22px;border-left:3px solid var(--naranja);
+  }
+
+  /* Atributos */
+  .s2-attrs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:900px){.s2-attrs{grid-template-columns:1fr}}
+  .attr{
+    display:flex;gap:14px;align-items:flex-start;
+    background:#fafaf7;border:1px solid #ede8dc;padding:18px 20px;
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .attr:hover{transform:translateY(-3px);border-color:var(--naranja);box-shadow:0 16px 36px rgba(0,0,0,.06)}
+  .attr-icon{flex:0 0 auto;width:26px;height:22px;position:relative;margin-top:2px}
+  .attr-icon::before,.attr-icon::after,.attr-icon i{
+    content:"";position:absolute;left:0;width:22px;height:5px;
+    background:var(--naranja);transform:skewX(-20deg);
+  }
+  .attr-icon::before{top:0}
+  .attr-icon::after{top:7px;left:3px;background:rgba(229,151,49,.75)}
+  .attr-icon i{top:14px;left:6px;background:rgba(229,151,49,.5);display:block}
+  .attr p{margin:0;font-family:'Montserrat',sans-serif;font-weight:500;font-size:13px;line-height:1.55;color:var(--negro)}
+
+  /* Variables */
+  .s2-vars{display:flex;flex-direction:column;gap:26px}
+  .s2-vars-head{display:flex;align-items:center;gap:12px}
+  .vars-dot{
+    width:9px;height:9px;background:var(--naranja);border-radius:50%;
+    animation:s2-vdot 1.6s ease-in-out infinite;
+  }
+  @keyframes s2-vdot{50%{transform:scale(1.4);opacity:.55}}
+  .s2-vars-head h3{
+    margin:0;font-family:'League Gothic',sans-serif;font-weight:400;
+    font-size:28px;letter-spacing:.1em;color:var(--naranja);text-transform:uppercase;
+  }
+  .vars-line{flex:1;height:1px;background:linear-gradient(90deg,var(--naranja),transparent)}
+  .vars-meta{
+    font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;
+    letter-spacing:.28em;text-transform:uppercase;color:var(--gris);
+  }
+  .s2-vars-row{display:flex;gap:48px;flex-wrap:wrap}
+  @media(max-width:700px){.s2-vars-row{flex-direction:column;gap:32px}}
+  @media(max-width:480px){
+    .s2-title{font-size:34px}
+    .s2-page{gap:28px}
+    .s2-desc p{font-size:16px;padding-left:16px}
+    .s2-vars-head h3{font-size:22px}
+    .vars-meta{display:none}
+  }
+</style>
+
+<section class="slide s3-wrap" id="s3">
+  <span class="s3-marker">TERRAFIX · HERITAGE</span>
+  <span class="s3-page">03 / 06</span>
+
+  <div class="s3-corner tl"></div>
+  <div class="s3-corner tr"></div>
+  <div class="s3-corner bl"></div>
+  <div class="s3-corner br"></div>
+
+  <div class="s3-frame">
+    <img src="3.png" alt="02. Historia & Valores — Raíces Profundas"/>
+    <div class="s3-glow"></div>
+  </div>
+</section>
+
+<style>
+  .slide.s3-wrap{
+    position:relative;background:
+      radial-gradient(ellipse at top left, rgba(229,151,49,.08), transparent 55%),
+      radial-gradient(ellipse at bottom right, rgba(104,114,77,.06), transparent 55%),
+      #fff;
+    padding:60px 5vw;overflow:hidden;
+  }
+  .slide.s3-wrap::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(to right, rgba(0,0,0,.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,.03) 1px, transparent 1px);
+    background-size:80px 80px;pointer-events:none;
+    mask-image:radial-gradient(ellipse at center, rgba(0,0,0,.5), transparent 85%);
+    -webkit-mask-image:radial-gradient(ellipse at center, rgba(0,0,0,.5), transparent 85%);
+  }
+  .s3-marker{
+    position:absolute;top:36px;left:40px;z-index:2;
+    font-family:'Montserrat',sans-serif;font-weight:700;font-size:10px;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--naranja);
+    padding-left:28px;
+  }
+  .s3-marker::before{
+    content:"";position:absolute;top:50%;left:0;width:20px;height:1px;
+    background:var(--naranja);transform:translateY(-50%);
+  }
+  .s3-page{
+    position:absolute;top:36px;right:40px;z-index:2;
+    font-family:'Montserrat',sans-serif;font-weight:600;font-size:10px;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--gris);
+  }
+
+  .s3-corner{
+    position:absolute;width:44px;height:44px;z-index:2;
+    border:1.5px solid var(--naranja);pointer-events:none;
+    opacity:0;transition:opacity .8s ease .2s, transform .8s ease .2s;
+    transform:scale(.6);
+  }
+  .slide.s3-wrap:hover .s3-corner,
+  .s3-frame:hover ~ .s3-corner{opacity:1;transform:scale(1)}
+  .s3-wrap .s3-corner{opacity:.7;transform:scale(1)}
+  .s3-corner.tl{top:70px;left:70px;border-right:0;border-bottom:0}
+  .s3-corner.tr{top:70px;right:70px;border-left:0;border-bottom:0}
+  .s3-corner.bl{bottom:70px;left:70px;border-right:0;border-top:0}
+  .s3-corner.br{bottom:70px;right:70px;border-left:0;border-top:0}
+
+  .s3-frame{
+    position:relative;max-width:1600px;width:100%;margin:0 auto;
+    filter:drop-shadow(0 30px 60px rgba(0,0,0,.08));
+    animation:s3-rise .9s cubic-bezier(.22,.61,.36,1) both;
+    transition:transform .6s ease;
+  }
+  .s3-frame:hover{transform:translateY(-4px)}
+  .s3-frame img{width:100%;height:auto;display:block;position:relative;z-index:1}
+  .s3-glow{
+    position:absolute;inset:-40px;z-index:0;pointer-events:none;
+    background:radial-gradient(ellipse at center, rgba(229,151,49,.10), transparent 65%);
+    opacity:0;transition:opacity .6s ease;
+  }
+  .s3-frame:hover .s3-glow{opacity:1}
+
+  @keyframes s3-rise{
+    from{opacity:0;transform:translateY(24px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  @media(max-width:860px){
+    .s3-marker,.s3-page{top:18px}
+    .s3-marker{left:20px}.s3-page{right:20px}
+    .s3-corner{width:28px;height:28px}
+    .s3-corner.tl{top:48px;left:24px}
+    .s3-corner.tr{top:48px;right:24px}
+    .s3-corner.bl{bottom:48px;left:24px}
+    .s3-corner.br{bottom:48px;right:24px}
+  }
+</style>
+
+<section class="slide pal" id="s4">
+  <div class="pal-page">
+
+    <!-- Header editorial -->
+    <header class="pal-head">
+      <div class="pal-head-left">
+        <span class="pal-eyebrow">IDENTIDAD CROMÁTICA · SISTEMA DE COLOR</span>
+        <h2 class="pal-title"><span class="pal-num">03.</span>PALETA<br/>DE COLORES</h2>
+        <div class="pal-meta">
+          <span>06 TONOS</span>
+          <i></i>
+          <span>01 PRIMARIO</span>
+          <i></i>
+          <span>05 SOPORTE</span>
+        </div>
+      </div>
+      <div class="pal-head-right">
+        <div class="pal-ratio">
+          <span class="ratio-lbl">PROPORCIÓN DE USO</span>
+          <div class="ratio-bar">
+            <span style="flex:40;background:#e59731" data-tip="40% · Primario"></span>
+            <span style="flex:25;background:#000000" data-tip="25% · Tipografía"></span>
+            <span style="flex:18;background:#f2e7db" data-tip="18% · Fondos"></span>
+            <span style="flex:9;background:#68724d" data-tip="9% · Acento"></span>
+            <span style="flex:5;background:#aca9a9" data-tip="5% · Datos"></span>
+            <span style="flex:3;background:#ffffff;border:1px solid #ddd" data-tip="3% · Base"></span>
+          </div>
+          <div class="ratio-legend">
+            <span>40%</span><span>25%</span><span>18%</span><span>9%</span><span>5%</span><span>3%</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mosaico dinámico -->
+    <div class="pal-mosaic">
+
+      <!-- Naranja -->
+      <div class="swatch sw-naranja" style="background:#e59731">
+        <div class="sw-tag">
+          <span class="sw-rol">PRIMARIO</span>
+          <span class="sw-dot"></span>
+        </div>
+        <div class="sw-info">
+          <h3>NARANJA TERRA</h3>
+          <div class="sw-hex">#e59731</div>
+          <div class="sw-data">
+            <span>RGB 229·151·49</span>
+            <span>CMYK 0·40·80·0</span>
+            <span>PANTONE 144 C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Negro -->
+      <div class="swatch sw-negro" style="background:#000000;color:#fff">
+        <div class="sw-tag">
+          <span class="sw-rol">TIPOGRÁFICO</span>
+          <span class="sw-dot" style="background:#e59731"></span>
+        </div>
+        <div class="sw-info">
+          <h3>NEGRO ABSOLUTO</h3>
+          <div class="sw-hex">#000000</div>
+          <div class="sw-data">
+            <span>RGB 0·0·0</span>
+            <span>CMYK 0·0·0·100</span>
+            <span>PANTONE BLACK 6 C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oliva -->
+      <div class="swatch sw-oliva" style="background:#68724d;color:#fff">
+        <div class="sw-tag">
+          <span class="sw-rol">ACENTO</span>
+          <span class="sw-dot" style="background:#e59731"></span>
+        </div>
+        <div class="sw-info">
+          <h3>OLIVA RAÍZ</h3>
+          <div class="sw-hex">#68724d</div>
+          <div class="sw-data">
+            <span>RGB 104·114·77</span>
+            <span>CMYK 63·43·83·35</span>
+            <span>PANTONE 5757 C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Crema -->
+      <div class="swatch sw-crema" style="background:#f2e7db">
+        <div class="sw-tag">
+          <span class="sw-rol">FONDO</span>
+          <span class="sw-dot"></span>
+        </div>
+        <div class="sw-info">
+          <h3>CREMA CÁLIDA</h3>
+          <div class="sw-hex">#f2e7db</div>
+          <div class="sw-data">
+            <span>RGB 242·231·219</span>
+            <span>CMYK 4·7·13·0</span>
+            <span>PANTONE 9181 C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gris -->
+      <div class="swatch sw-gris" style="background:#aca9a9">
+        <div class="sw-tag">
+          <span class="sw-rol">DATOS</span>
+          <span class="sw-dot"></span>
+        </div>
+        <div class="sw-info">
+          <h3>GRIS NEUTRO</h3>
+          <div class="sw-hex">#aca9a9</div>
+          <div class="sw-data">
+            <span>RGB 172·169·169</span>
+            <span>CMYK 0·2·2·32</span>
+            <span>PANTONE COOL GRAY 6 C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blanco -->
+      <div class="swatch sw-blanco" style="background:#ffffff">
+        <div class="sw-tag">
+          <span class="sw-rol">BASE</span>
+          <span class="sw-dot"></span>
+        </div>
+        <div class="sw-info">
+          <h3>BLANCO PURO</h3>
+          <div class="sw-hex">#ffffff</div>
+          <div class="sw-data">
+            <span>RGB 255·255·255</span>
+            <span>CMYK 0·0·0·0</span>
+            <span>PANTONE WHITE</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="pal-foot">
+      <span>TERRAFIX · MANUAL DE MARCA · 2026</span>
+      <span>PÁGINA 04 / 06</span>
+      <span>SISTEMA CROMÁTICO OFICIAL</span>
+    </footer>
+  </div>
+</section>
+
+<style>
+  .slide.pal{background:#fff;padding:70px 6vw;min-height:100vh;display:block}
+  @media(max-width:700px){.slide.pal{padding:40px 5vw}}
+  @media(max-width:480px){.slide.pal{padding:30px 16px}}
+  .slide.pal::after{display:none}
+  .pal-page{
+    position:relative;max-width:1480px;margin:0 auto;
+    display:flex;flex-direction:column;gap:40px;
+  }
+  .pal-page::before{
+    content:"";position:absolute;inset:-40px -20px;
+    background-image:
+      linear-gradient(to right, rgba(0,0,0,.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,.04) 1px, transparent 1px);
+    background-size:80px 80px;pointer-events:none;
+    mask-image:radial-gradient(ellipse at center, rgba(0,0,0,.5), transparent 90%);
+    -webkit-mask-image:radial-gradient(ellipse at center, rgba(0,0,0,.5), transparent 90%);
+    z-index:0;
+  }
+
+  /* Header */
+  .pal-head{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;
+    padding-bottom:24px;border-bottom:1px solid #ede8dc;
+  }
+  @media(max-width:1000px){.pal-head{grid-template-columns:1fr;gap:24px}}
+  .pal-eyebrow{
+    font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--gris);display:block;margin-bottom:10px;
+  }
+  .pal-title{
+    font-family:'League Gothic',sans-serif;font-weight:400;
+    font-size:clamp(56px,7vw,104px);line-height:.9;color:var(--naranja);
+    letter-spacing:.02em;margin:0;
+  }
+  .pal-num{color:var(--negro);font-size:.55em;letter-spacing:.02em;margin-right:14px}
+  .pal-meta{
+    display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px;
+    font-family:'Montserrat';font-weight:600;font-size:10px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--negro);
+  }
+  .pal-meta i{width:24px;height:1px;background:var(--naranja);display:inline-block}
+
+  .pal-ratio{
+    background:#fafaf7;border:1px solid #ede8dc;padding:20px 22px;
+  }
+  .ratio-lbl{
+    font-family:'Montserrat';font-weight:700;font-size:10px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--gris);display:block;margin-bottom:12px;
+  }
+  .ratio-bar{
+    display:flex;width:100%;height:32px;overflow:hidden;
+  }
+  .ratio-bar span{
+    position:relative;transition:flex .4s ease;cursor:default;
+  }
+  .ratio-bar span:hover{flex:60 !important}
+  .ratio-bar span::after{
+    content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;
+    transform:translateX(-50%);background:var(--negro);color:#fff;
+    font-family:'Montserrat';font-size:9px;letter-spacing:.2em;padding:5px 9px;
+    white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;
+    text-transform:uppercase;
+  }
+  .ratio-bar span:hover::after{opacity:1}
+  .ratio-legend{
+    display:flex;margin-top:8px;
+    font-family:'Montserrat';font-weight:600;font-size:10px;letter-spacing:.16em;color:var(--gris);
+  }
+  .ratio-legend span:nth-child(1){flex:40}
+  .ratio-legend span:nth-child(2){flex:25}
+  .ratio-legend span:nth-child(3){flex:18}
+  .ratio-legend span:nth-child(4){flex:9}
+  .ratio-legend span:nth-child(5){flex:5}
+  .ratio-legend span:nth-child(6){flex:3}
+
+  /* Mosaico */
+  .pal-mosaic{
+    position:relative;z-index:1;
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr .85fr;
+    grid-template-rows:1.1fr .9fr;
+    gap:14px;
+    min-height:560px;
+  }
+  @media(max-width:1000px){
+    .pal-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,220px)}
+  }
+  @media(max-width:560px){
+    .pal-mosaic{grid-template-columns:1fr;grid-template-rows:repeat(6,160px);min-height:auto}
+    .sw-naranja,.sw-negro,.sw-oliva,.sw-crema,.sw-gris,.sw-blanco{grid-column:1;grid-row:auto}
+    .swatch{padding:18px}
+    .sw-data{max-height:120px;opacity:.85}
+  }
+  @media(max-width:480px){
+    .pal-title{font-size:46px}
+    .pal-meta{font-size:9px;gap:10px}
+    .pal-ratio{padding:14px 16px}
+    .ratio-bar{height:24px}
+    .ratio-legend{font-size:9px}
+  }
+
+  .sw-naranja{grid-column:1;grid-row:1 / span 2}
+  .sw-negro{grid-column:2 / span 2;grid-row:1}
+  .sw-oliva{grid-column:4;grid-row:1}
+  .sw-crema{grid-column:2 / span 2;grid-row:2}
+  .sw-gris{grid-column:4;grid-row:2}
+  .sw-blanco{grid-column:1;grid-row:3}
+
+  .swatch{
+    position:relative;overflow:hidden;padding:22px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    color:var(--negro);transition:transform .35s ease, box-shadow .35s ease;
+    cursor:default;
+  }
+  .swatch:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.14);z-index:3}
+  .sw-blanco{border:1px solid #ede8dc}
+  .sw-crema{color:var(--negro)}
+
+  .sw-tag{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'Montserrat';font-weight:700;font-size:10px;letter-spacing:.28em;
+    text-transform:uppercase;opacity:.8;
+  }
+  .sw-dot{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.6}
+
+  .sw-info{display:flex;flex-direction:column;gap:6px}
+  .sw-info h3{
+    margin:0;font-family:'League Gothic',sans-serif;font-weight:400;
+    font-size:clamp(22px,2vw,32px);letter-spacing:.04em;line-height:1;
+    text-transform:uppercase;
+  }
+  .sw-hex{
+    font-family:'Bebas Neue',sans-serif;font-size:clamp(18px,1.6vw,24px);
+    letter-spacing:.08em;line-height:1;
+  }
+  .sw-data{
+    display:flex;flex-direction:column;gap:2px;margin-top:8px;
+    max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease, opacity .3s ease;
+    font-family:'Montserrat';font-weight:500;font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;
+  }
+  .swatch:hover .sw-data{max-height:120px;opacity:.85}
+
+  /* Overlay dinámico en el swatch principal */
+  .sw-naranja::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 20%, rgba(255,255,255,.25), transparent 55%);
+    pointer-events:none;
+  }
+  .sw-negro::before{
+    content:"TF";position:absolute;top:50%;right:-20px;transform:translateY(-50%);
+    font-family:'League Gothic',sans-serif;font-size:200px;line-height:1;
+    color:rgba(229,151,49,.08);letter-spacing:-.04em;pointer-events:none;
+  }
+
+  /* Footer */
+  .pal-foot{
+    position:relative;z-index:1;
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:20px;border-top:1px solid #ede8dc;
+    font-family:'Montserrat';font-weight:600;font-size:10px;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--gris);
+  }
+  .pal-foot span:first-child{color:var(--negro)}
+  .pal-foot span:nth-child(2){color:var(--naranja)}
+  @media(max-width:700px){.pal-foot{flex-direction:column;gap:8px;text-align:center}}
+</style>
+
+<section class="slide tipo" id="s5">
+  <div class="tipo-page">
+
+    <header class="tipo-head">
+      <span class="tipo-eyebrow">IDENTIDAD VERBAL · SISTEMA TIPOGRÁFICO</span>
+      <h2 class="tipo-title"><span class="tipo-num">04.</span>TIPOGRAFIA</h2>
+      <div class="tipo-meta">
+        <span>02 FUENTES</span>
+        <i></i>
+        <span>5 NIVELES</span>
+        <i></i>
+        <span>100% WEB-SAFE</span>
+      </div>
+    </header>
+
+    <div class="tipo-grid">
+
+      <!-- LEFT · SPECIMENS -->
+      <aside class="tipo-left">
+
+        <article class="specimen">
+          <div class="specimen-index">
+            <span class="dot"></span>
+            <span class="idx">01</span>
+            <span class="role">DISPLAY · TITULARES</span>
+          </div>
+          <div class="specimen-hero">
+            <span class="hero-letter lg">Aa</span>
+            <div class="hero-tag">
+              <span class="tag-name lg">LEAGUE GOTHIC</span>
+              <span class="tag-rule"></span>
+              <span class="tag-wt">Regular · 400</span>
+            </div>
+          </div>
+          <div class="glyphset">
+            <div class="glyph-row lg">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+            <div class="glyph-row lg lc">abcdefghijklmnopqrstuvwxyz</div>
+            <div class="glyph-row lg nums">0123456789 &amp; . , / ! ? @</div>
+          </div>
+        </article>
+
+        <article class="specimen">
+          <div class="specimen-index">
+            <span class="dot"></span>
+            <span class="idx">02</span>
+            <span class="role">CUERPO · COMUNICACIÓN</span>
+          </div>
+          <div class="specimen-hero">
+            <span class="hero-letter bn">AA</span>
+            <div class="hero-tag">
+              <span class="tag-name bn">BEBAS NEUE</span>
+              <span class="tag-rule"></span>
+              <span class="tag-wt">Regular · 400</span>
+            </div>
+          </div>
+          <div class="glyphset">
+            <div class="glyph-row bn">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+            <div class="glyph-row bn">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+            <div class="glyph-row bn nums">0123456789 &amp; . , / ! ? @</div>
+          </div>
+        </article>
+
+      </aside>
+
+      <!-- DIVIDER -->
+      <div class="tipo-divider">
+        <span></span>
+        <i>SCALE</i>
+        <span></span>
+      </div>
+
+      <!-- RIGHT · HIERARCHY -->
+      <section class="tipo-right">
+        <div class="hier-head">
+          <span>JERARQUÍA EN USO</span>
+          <span>FUENTE · TAMAÑO · INTERLINEADO</span>
+        </div>
+
+        <div class="hier-item">
+          <div class="hier-spec"><b>H1</b> · LEAGUE GOTHIC · 64 / 1.0</div>
+          <div class="hier-demo lg" style="font-size:72px;line-height:1">Título principal</div>
+        </div>
+
+        <div class="hier-item">
+          <div class="hier-spec"><b>H2</b> · LEAGUE GOTHIC · 40 / 1.05</div>
+          <div class="hier-demo lg" style="font-size:44px;line-height:1.05">Título de sección</div>
+        </div>
+
+        <div class="hier-item">
+          <div class="hier-spec"><b>H3</b> · LEAGUE GOTHIC · 22 · tracking .08em · UPPERCASE</div>
+          <div class="hier-demo lg" style="font-size:22px;letter-spacing:.08em;text-transform:uppercase">Subtítulo</div>
+        </div>
+
+        <div class="hier-item">
+          <div class="hier-spec"><b>CUERPO</b> · BEBAS NEUE · 16 / 1.65</div>
+          <div class="hier-demo bn" style="font-size:16px;line-height:1.65;letter-spacing:.04em">Texto corriente para descripciones de producto, bajadas y comunicación extensa. Se ajusta entre 14 y 17 px según medio.</div>
+        </div>
+
+        <div class="hier-item">
+          <div class="hier-spec"><b>LEGALES</b> · BEBAS NEUE · 12 / 1.5 · gris</div>
+          <div class="hier-demo bn" style="font-size:12px;line-height:1.5;letter-spacing:.04em;color:var(--gris)">Notas legales, términos y condiciones, especificaciones técnicas complementarias y referencias bibliográficas de documentación comercial.</div>
+        </div>
+      </section>
+
+    </div>
+
+    <footer class="tipo-foot">
+      <span>TERRAFIX · MANUAL DE MARCA · 2026</span>
+      <span>PÁGINA 05 / 06</span>
+      <span>TIPOGRAFÍA OFICIAL</span>
+    </footer>
+  </div>
+</section>
+
+<style>
+  .slide.tipo{background:#fff;padding:80px 6vw;min-height:100vh;display:block}
+  @media(max-width:700px){.slide.tipo{padding:40px 5vw}}
+  @media(max-width:480px){.slide.tipo{padding:30px 16px}}
+  .slide.tipo::after{display:none}
+  .tipo-page{
+    position:relative;max-width:1480px;margin:0 auto;
+    display:flex;flex-direction:column;gap:50px;
+  }
+  /* subtle construction grid */
+  .tipo-page::before{
+    content:"";position:absolute;inset:-40px -20px;
+    background-image:
+      linear-gradient(to right, rgba(0,0,0,.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,.04) 1px, transparent 1px);
+    background-size:80px 80px;
+    pointer-events:none;mask-image:radial-gradient(ellipse at center, rgba(0,0,0,.5), transparent 90%);
+    -webkit-mask-image:radial-gradient(ellipse at center, rgba(0,0,0,.5), transparent 90%);
+    z-index:0;
+  }
+  .tipo-head{position:relative;z-index:1}
+  .tipo-eyebrow{
+    font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--gris);display:block;margin-bottom:10px;
+  }
+  .tipo-title{
+    font-family:'League Gothic',sans-serif;font-weight:400;
+    font-size:clamp(56px,7vw,96px);line-height:.95;color:var(--naranja);
+    letter-spacing:.02em;margin:0;display:flex;align-items:baseline;gap:18px;
+  }
+  .tipo-num{color:var(--negro);font-size:.55em;letter-spacing:.02em}
+  .tipo-meta{
+    display:flex;align-items:center;gap:14px;margin-top:18px;
+    font-family:'Montserrat';font-weight:600;font-size:10px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--negro);
+  }
+  .tipo-meta i{width:24px;height:1px;background:var(--naranja);display:inline-block}
+
+  .tipo-grid{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:1fr 56px 1fr;gap:40px;align-items:start;
+  }
+  @media(max-width:1000px){
+    .tipo-grid{grid-template-columns:1fr;gap:40px}
+    .tipo-divider{display:none}
+  }
+
+  /* SPECIMEN */
+  .specimen{
+    background:#fafaf7;border:1px solid #ede8dc;border-radius:4px;
+    padding:32px 32px 28px;position:relative;margin-bottom:26px;
+    transition:box-shadow .3s,transform .3s;
+  }
+  .specimen:hover{box-shadow:0 20px 50px rgba(0,0,0,.06);transform:translateY(-2px)}
+  .specimen::before{
+    content:"";position:absolute;top:0;left:0;width:3px;height:38px;background:var(--naranja);
+  }
+  .specimen-index{
+    display:flex;align-items:center;gap:10px;margin-bottom:18px;
+    font-family:'Montserrat';font-weight:700;font-size:10px;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--negro);
+  }
+  .specimen-index .dot{width:6px;height:6px;background:var(--naranja);border-radius:50%}
+  .specimen-index .idx{color:var(--naranja);font-size:11px}
+  .specimen-index .role{color:var(--gris);padding-left:6px;border-left:1px solid #d9d2c4;margin-left:4px}
+
+  .specimen-hero{
+    display:flex;align-items:flex-end;gap:28px;margin:6px 0 22px;padding-bottom:18px;
+    border-bottom:1px solid #ede8dc;flex-wrap:wrap;
+  }
+  @media(max-width:480px){
+    .specimen{padding:22px 20px}
+    .specimen-hero{gap:14px}
+    .hero-letter{font-size:clamp(80px,24vw,110px)}
+  }
+  .hero-letter{font-size:clamp(110px,13vw,180px);line-height:.85;color:var(--negro)}
+  .hero-letter.lg{font-family:'League Gothic',sans-serif;letter-spacing:-.02em}
+  .hero-letter.bn{font-family:'Bebas Neue',sans-serif;letter-spacing:.02em}
+  .hero-tag{display:flex;flex-direction:column;gap:6px;padding-bottom:14px;min-width:0;flex:1}
+  .tag-name{
+    font-size:clamp(18px,2vw,26px);color:var(--negro);
+    text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:var(--naranja);
+    letter-spacing:.02em;line-height:1;
+  }
+  .tag-name.lg{font-family:'League Gothic',sans-serif;font-weight:400}
+  .tag-name.bn{font-family:'Bebas Neue',sans-serif;font-weight:400}
+  .tag-rule{height:1px;background:linear-gradient(90deg,var(--negro),transparent)}
+  .tag-wt{
+    font-family:'Montserrat';font-weight:600;font-size:10px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--gris);
+  }
+
+  .glyphset{display:flex;flex-direction:column;gap:8px}
+  .glyph-row{font-size:clamp(14px,1.2vw,18px);line-height:1.2;color:var(--negro);letter-spacing:.04em;word-break:break-all}
+  .glyph-row.lg{font-family:'League Gothic',sans-serif}
+  .glyph-row.bn{font-family:'Bebas Neue',sans-serif}
+  .glyph-row.lc{color:var(--negro)}
+  .glyph-row.nums{color:var(--gris);font-size:clamp(13px,1vw,16px)}
+
+  /* DIVIDER */
+  .tipo-divider{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    align-self:stretch;gap:14px;padding-top:40px;
+  }
+  .tipo-divider span{flex:1;width:1px;background:linear-gradient(var(--naranja),transparent)}
+  .tipo-divider span:last-child{background:linear-gradient(transparent,var(--naranja))}
+  .tipo-divider i{
+    font-family:'Montserrat';font-weight:700;font-size:9px;letter-spacing:.3em;
+    color:var(--gris);writing-mode:vertical-rl;font-style:normal;
+  }
+
+  /* HIERARCHY */
+  .tipo-right{
+    background:#fafaf7;border:1px solid #ede8dc;border-radius:4px;
+    padding:32px 36px;position:relative;
+  }
+  .tipo-right::before{
+    content:"";position:absolute;top:0;right:0;width:38px;height:3px;background:var(--naranja);
+  }
+  .hier-head{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+    font-family:'Montserrat';font-weight:700;font-size:10px;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--gris);
+    padding-bottom:12px;margin-bottom:24px;border-bottom:1px solid #ede8dc;
+  }
+  @media(max-width:480px){
+    .tipo-right{padding:22px 20px}
+    .hier-demo{word-break:break-word}
+    .hier-demo[style*="72px"]{font-size:44px !important}
+    .hier-demo[style*="44px"]{font-size:30px !important}
+    .tipo-foot{flex-direction:column;gap:6px;text-align:center}
+  }
+  .hier-head span:first-child{color:var(--negro)}
+  .hier-item{padding:14px 0;border-bottom:1px dashed #e5dfcf;display:flex;flex-direction:column;gap:10px}
+  .hier-item:last-child{border-bottom:0}
+  .hier-spec{
+    font-family:'Montserrat';font-weight:500;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--gris);
+    padding-bottom:4px;border-bottom:1px solid #d9d2c4;align-self:flex-start;
+  }
+  .hier-spec b{color:var(--naranja);font-weight:800;letter-spacing:.2em}
+  .hier-demo.lg{font-family:'League Gothic',sans-serif;font-weight:400;color:var(--negro)}
+  .hier-demo.bn{font-family:'Bebas Neue',sans-serif;font-weight:400;color:var(--negro)}
+
+  .tipo-foot{
+    position:relative;z-index:1;
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:24px;border-top:1px solid #ede8dc;
+    font-family:'Montserrat';font-weight:600;font-size:10px;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--gris);
+  }
+  .tipo-foot span:first-child{color:var(--negro)}
+  .tipo-foot span:nth-child(2){color:var(--naranja)}
+</style>
+
+<section class="slide mock" id="s6">
+  <div class="mock-page">
+
+    <!-- Header editorial -->
+    <header class="mock-head">
+      <div class="mock-head-left">
+        <span class="mock-eyebrow">IDENTIDAD APLICADA · BRAND IN CONTEXT</span>
+        <h2 class="mock-title"><span class="mock-num">05.</span>MOCKUPS</h2>
+        <div class="mock-meta">
+          <span>05 PIEZAS</span>
+          <i></i>
+          <span>FLOTA · RETAIL · DIGITAL · SHOWROOM</span>
+          <i></i>
+          <span>ESCALA 1:1</span>
+        </div>
+      </div>
+      <div class="mock-head-right">
+        <div class="mock-quote">
+          <span class="q-mark">“</span>
+          <p>La marca cobra vida cuando sale del logotipo y habita el mundo real: sobre un camión, una fachada, una pantalla, una pared.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Rail de índice -->
+    <div class="mock-index">
+      <span class="mock-index-lbl">PIEZAS EN ESTA LÁMINA</span>
+      <ol class="mock-index-list">
+        <li><b>01</b> Flota · Unidad de reparto</li>
+        <li><b>02</b> Retail · Distribuidor autorizado</li>
+        <li><b>03</b> Retail · Local principal</li>
+        <li><b>04</b> Digital · Post de campaña</li>
+        <li><b>05</b> Showroom · Exhibidor de marca</li>
+      </ol>
+    </div>
+
+    <!-- Stage con la composición original -->
+    <figure class="mock-stage">
+      <div class="stage-ornament stage-tl"></div>
+      <div class="stage-ornament stage-tr"></div>
+      <div class="stage-ornament stage-bl"></div>
+      <div class="stage-ornament stage-br"></div>
+
+      <span class="stage-corner tlc">01</span>
+      <span class="stage-corner blc">02</span>
+      <span class="stage-corner mid">03</span>
+      <span class="stage-corner tcc">04</span>
+      <span class="stage-corner rcc">05</span>
+
+      <div class="stage-inner">
+        <img src="6.png" alt="Mockups realistas — Terrafix aplicado a flota, retail, digital y showroom"/>
+      </div>
+
+      <figcaption class="stage-cap">
+        <span>FIG. 05 / MANUAL TERRAFIX 2026</span>
+        <span>APLICACIONES REALISTAS DEL SISTEMA DE MARCA</span>
+      </figcaption>
+    </figure>
+
+    <!-- Footer -->
+    <footer class="mock-foot">
+      <span>TERRAFIX · MANUAL DE MARCA · 2026</span>
+      <span>PÁGINA 06 / 06</span>
+      <span>MOCKUPS & APLICACIONES</span>
+    </footer>
+  </div>
+</section>
+
+<style>
+  .slide.mock{background:#fff;padding:80px 6vw;min-height:100vh;display:block}
+  @media(max-width:700px){.slide.mock{padding:40px 5vw}}
+  @media(max-width:480px){.slide.mock{padding:30px 16px}}
+  .slide.mock::after{display:none}
+  .mock-page{
+    position:relative;max-width:1480px;margin:0 auto;
+    display:flex;flex-direction:column;gap:46px;
+  }
+  /* Grid de construcción sutil */
+  .mock-page::before{
+    content:"";position:absolute;inset:-40px -20px;
+    background-image:
+      linear-gradient(to right, rgba(0,0,0,.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,.04) 1px, transparent 1px);
+    background-size:80px 80px;pointer-events:none;
+    mask-image:radial-gradient(ellipse at center, rgba(0,0,0,.5), transparent 90%);
+    -webkit-mask-image:radial-gradient(ellipse at center, rgba(0,0,0,.5), transparent 90%);
+    z-index:0;
+  }
+
+  /* Header */
+  .mock-head{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:end;
+    padding-bottom:28px;border-bottom:1px solid #ede8dc;
+  }
+  @media(max-width:1000px){.mock-head{grid-template-columns:1fr;gap:24px}}
+  @media(max-width:480px){
+    .mock-title{font-size:46px;gap:10px}
+    .mock-quote{padding:18px 18px 18px 44px}
+    .mock-quote .q-mark{font-size:54px}
+    .mock-quote p{font-size:15px}
+    .mock-index{padding:14px 18px}
+    .mock-index-list{font-size:10px;gap:6px 16px}
+    .mock-foot{flex-direction:column;gap:6px;text-align:center;font-size:9px}
+  }
+  .mock-eyebrow{
+    font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--gris);display:block;margin-bottom:10px;
+  }
+  .mock-title{
+    font-family:'League Gothic',sans-serif;font-weight:400;
+    font-size:clamp(56px,7vw,104px);line-height:.95;color:var(--naranja);
+    letter-spacing:.02em;margin:0;display:flex;align-items:baseline;gap:18px;
+  }
+  .mock-num{color:var(--negro);font-size:.55em;letter-spacing:.02em}
+  .mock-meta{
+    display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px;
+    font-family:'Montserrat';font-weight:600;font-size:10px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--negro);
+  }
+  .mock-meta i{width:24px;height:1px;background:var(--naranja);display:inline-block}
+  .mock-quote{
+    position:relative;background:#fafaf7;border:1px solid #ede8dc;border-left:3px solid var(--naranja);
+    padding:22px 26px 22px 52px;
+  }
+  .mock-quote .q-mark{
+    position:absolute;top:-6px;left:14px;
+    font-family:'League Gothic';font-size:72px;color:var(--naranja);line-height:1;
+  }
+  .mock-quote p{
+    margin:0;font-family:'Bebas Neue';font-size:18px;letter-spacing:.05em;
+    line-height:1.5;color:var(--negro);
+  }
+
+  /* Index rail */
+  .mock-index{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:220px 1fr;gap:26px;align-items:center;
+    background:var(--negro);color:#fff;padding:18px 26px;
+  }
+  @media(max-width:860px){.mock-index{grid-template-columns:1fr;gap:12px}}
+  .mock-index-lbl{
+    font-family:'Montserrat';font-weight:700;font-size:10px;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--naranja);
+  }
+  .mock-index-list{
+    list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 28px;
+    font-family:'Montserrat';font-weight:500;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+  .mock-index-list li{display:flex;gap:8px;align-items:center}
+  .mock-index-list b{color:var(--naranja);font-weight:700;letter-spacing:.2em}
+
+  /* Stage */
+  .mock-stage{
+    position:relative;z-index:1;margin:0;
+    background:linear-gradient(180deg, #fafaf7 0%, #f2e7db 100%);
+    border:1px solid #ede8dc;padding:44px 44px 24px;
+  }
+  @media(max-width:700px){.mock-stage{padding:24px 20px 16px}}
+  .stage-ornament{
+    position:absolute;width:36px;height:36px;border:2px solid var(--naranja);
+  }
+  .stage-tl{top:14px;left:14px;border-right:0;border-bottom:0}
+  .stage-tr{top:14px;right:14px;border-left:0;border-bottom:0}
+  .stage-bl{bottom:14px;left:14px;border-right:0;border-top:0}
+  .stage-br{bottom:14px;right:14px;border-left:0;border-top:0}
+
+  .stage-corner{
+    position:absolute;font-family:'League Gothic';font-size:22px;
+    color:var(--negro);background:var(--naranja);padding:4px 10px;
+    letter-spacing:.08em;z-index:2;pointer-events:none;
+  }
+  .stage-corner.tlc{top:54px;left:54px}
+  .stage-corner.blc{bottom:54px;left:54px}
+  .stage-corner.mid{top:50%;left:50%;transform:translate(-50%,-50%);background:var(--negro);color:var(--naranja)}
+  .stage-corner.tcc{top:54px;right:34%}
+  .stage-corner.rcc{top:50%;right:54px;transform:translateY(-50%)}
+  @media(max-width:900px){.stage-corner{display:none}}
+
+  .stage-inner{position:relative}
+  .stage-inner img{width:100%;height:auto;display:block}
+
+  .stage-cap{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:14px;padding-top:14px;border-top:1px dashed #d9d2c4;
+    font-family:'Montserrat';font-weight:600;font-size:10px;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--gris);
+  }
+  .stage-cap span:first-child{color:var(--negro)}
+  @media(max-width:700px){.stage-cap{flex-direction:column;gap:6px;text-align:center}}
+
+  /* Legend */
+  .mock-legend{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:repeat(5,1fr);gap:16px;
+  }
+  @media(max-width:1100px){.mock-legend{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.mock-legend{grid-template-columns:1fr}}
+  .legend-card{
+    background:#fafaf7;border:1px solid #ede8dc;padding:18px 18px 20px;
+    display:flex;flex-direction:column;gap:10px;position:relative;
+    transition:transform .25s,box-shadow .25s;
+  }
+  .legend-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.06)}
+  .legend-card::before{
+    content:"";position:absolute;top:0;left:0;width:28px;height:3px;background:var(--naranja);
+  }
+  .legend-num{
+    font-family:'League Gothic';font-size:30px;line-height:1;color:var(--naranja);
+    letter-spacing:.04em;
+  }
+  .legend-card h4{
+    margin:0 0 4px;font-family:'League Gothic';font-weight:400;font-size:20px;
+    letter-spacing:.06em;color:var(--negro);text-transform:uppercase;
+  }
+  .legend-card p{
+    margin:0;font-family:'Bebas Neue';font-size:13px;letter-spacing:.05em;
+    line-height:1.5;color:var(--gris);
+  }
+
+  /* Footer */
+  .mock-foot{
+    position:relative;z-index:1;
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:22px;border-top:1px solid #ede8dc;
+    font-family:'Montserrat';font-weight:600;font-size:10px;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--gris);
+  }
+  .mock-foot span:first-child{color:var(--negro)}
+  .mock-foot span:nth-child(2){color:var(--naranja)}
+  @media(max-width:700px){.mock-foot{flex-direction:column;gap:8px;text-align:center}}
+</style>
+
+<!-- ===== EXTRAS: Aplicaciones digitales y Tono de voz ===== -->
+<section class="extras" id="extras">
+
+  <!-- TONO DE VOZ -->
+  <div id="voz">
+    <div class="section-title">
+      <span class="num">07.</span>
+      <h2>TONO DE VOZ</h2>
+    </div>
+    <p class="lead">Directo, experto, robusto y eficiente. Hablamos como quien conoce el producto, entiende al cliente y se compromete con la solución. Sin jerga vacía, sin sobrepromesa.</p>
+
+    <div class="ui-grid" style="margin-top:36px">
+      <div class="ui-card" style="border-left:4px solid var(--naranja)">
+        <span class="lbl" style="color:var(--naranja)">DIRECTO</span>
+        <p style="font-family:'Bebas Neue';font-size:16px;letter-spacing:.06em;line-height:1.55;color:var(--negro);margin:0">Vamos al beneficio sin rodeos. Cada palabra suma, ninguna sobra.</p>
+      </div>
+      <div class="ui-card" style="border-left:4px solid var(--negro)">
+        <span class="lbl">EXPERTO</span>
+        <p style="font-family:'Bebas Neue';font-size:16px;letter-spacing:.06em;line-height:1.55;color:var(--negro);margin:0">Conocimiento real del rubro. Datos técnicos, no slogans genéricos.</p>
+      </div>
+      <div class="ui-card" style="border-left:4px solid var(--oliva)">
+        <span class="lbl" style="color:var(--oliva)">ROBUSTO</span>
+        <p style="font-family:'Bebas Neue';font-size:16px;letter-spacing:.06em;line-height:1.55;color:var(--negro);margin:0">Palabras con peso. Firmeza sin dureza, autoridad sin arrogancia.</p>
+      </div>
+      <div class="ui-card" style="border-left:4px solid var(--gris)">
+        <span class="lbl" style="color:var(--gris)">EFICIENTE</span>
+        <p style="font-family:'Bebas Neue';font-size:16px;letter-spacing:.06em;line-height:1.55;color:var(--negro);margin:0">Comunicación que resuelve. Nada decorativo, todo funcional.</p>
+      </div>
+    </div>
+
+    <div class="voz-compare" style="margin-top:40px;background:#fff;padding:32px;border:1px solid #e8e1d4">
+      <div class="voz-compare-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+        <div>
+          <div class="lbl" style="color:var(--oliva);font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px">Así hablamos</div>
+          <p style="font-family:'Bebas Neue';font-size:18px;letter-spacing:.05em;line-height:1.5;color:var(--negro);margin:0">"Nuestro piso SPC resiste 20 años de tránsito residencial intenso gracias a una capa de desgaste de 0,5 mm."</p>
+        </div>
+        <div>
+          <div class="lbl" style="color:#B54A2A;font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px">Así no</div>
+          <p style="font-family:'Bebas Neue';font-size:18px;letter-spacing:.05em;line-height:1.5;color:var(--negro);margin:0">"¡El mejor piso del mundo! Revolucionario, único, la mejor decisión que vas a tomar en tu vida."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CIERRE -->
+  <div style="text-align:center;padding:40px 0;border-top:1px solid #d9d2c4">
+    <div style="font-family:'League Gothic';font-size:24px;color:var(--naranja);letter-spacing:.1em;margin-bottom:8px">TERRAFIX</div>
+    <div style="font-family:'Bebas Neue';font-size:14px;letter-spacing:.2em;color:var(--gris)">VARIEDAD DE ALTERNATIVAS PARA UNA MISMA SOLUCIÓN</div>
+    <div style="font-family:'Montserrat';font-size:10px;letter-spacing:.25em;color:var(--gris);text-transform:uppercase;margin-top:18px">Manual de Marca · Edición 2026</div>
+  </div>
+
+</section>
+
+</main>
+
+<script>
+  const links = document.querySelectorAll('nav.side .links a');
+  const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href')));
+  const setActive = () => {
+    const y = window.scrollY + window.innerHeight * 0.35;
+    let idx = 0;
+    sections.forEach((s, i) => { if (s && s.offsetTop <= y) idx = i; });
+    links.forEach(l => l.classList.remove('active'));
+    links[idx]?.classList.add('active');
+  };
+  window.addEventListener('scroll', setActive, {passive:true});
+  setActive();
+
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navBackdrop = document.querySelector('.nav-backdrop');
+  const closeNav = () => {
+    document.body.classList.remove('nav-open');
+    navToggle?.setAttribute('aria-expanded','false');
+    navToggle?.setAttribute('aria-label','Abrir menú');
+  };
+  navToggle?.addEventListener('click', () => {
+    const open = document.body.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  });
+  navBackdrop?.addEventListener('click', closeNav);
+  document.querySelectorAll('nav.side a').forEach(a => a.addEventListener('click', closeNav));
+  window.addEventListener('keydown', e => { if(e.key === 'Escape') closeNav(); });
+</script>
+
+</body>
+</html>
